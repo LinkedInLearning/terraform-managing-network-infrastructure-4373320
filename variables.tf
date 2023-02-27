@@ -30,6 +30,26 @@ variable "subnets" {
   type         = list(string)
 }
 
+variable "igw" {
+  description  = "Name of AWS internet gateway"
+  type         = string
+}
+
+variable "public_rtb" {
+  description  = "Name of AWS route table"
+  type         = string
+}
+
+variable "public_sg" {
+  description  = "Name of AWS security group"
+  type         = string
+}
+
+variable "public_ip" {
+  description  = "Public IP to whitelist"
+  type         = string
+}
+
 # instance variables
 variable "instances" {
   description  = "List of AWS instances"
