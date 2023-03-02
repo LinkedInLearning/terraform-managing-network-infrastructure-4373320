@@ -47,6 +47,7 @@ resource "aws_security_group" "public" {
 }
 
 resource "aws_network_interface_sg_attachment" "public" {
+  count                 = length(var.instances)
   security_group_id     = aws_security_group.public.id
-  network_interface_id  = aws_instance.dev[0].primary_network_interface_id
+  network_interface_id  = aws_instance.dev[count.index].primary_network_interface_id
 }
