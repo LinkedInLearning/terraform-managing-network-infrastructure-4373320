@@ -35,7 +35,17 @@ variable "igw" {
   type         = string
 }
 
+variable "ngw" {
+  description  = "Name of AWS NAT gateway"
+  type         = string
+}
+
 variable "public_rtb" {
+  description  = "Name of AWS route table"
+  type         = string
+}
+
+variable "private_rtb" {
   description  = "Name of AWS route table"
   type         = string
 }
