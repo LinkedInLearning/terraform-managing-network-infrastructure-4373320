@@ -29,7 +29,7 @@ resource "aws_security_group" "public" {
     from_port   = 0
     to_port     = 0
     protocol    = "-1"
-    cidr_blocks = [var.public_ip]
+    cidr_blocks = local.ingress_cidr_list
   }
 
   egress {
