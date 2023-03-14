@@ -27,4 +27,7 @@ locals {
   key_pair_name        = random_id.test.hex
   security_group_name  = format("grp-%s", random_string.test.result)
 
+  # Allowed for ingress
+  ingress_cidr_list    = concat([var.public_ip], ["10.5.1.0/24"])
+
 }
