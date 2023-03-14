@@ -3,6 +3,11 @@ output "vpc_id" {
   value        = aws_vpc.test.id
 }
 
+output "vpc_cidr" {
+  description  = "CIDR of AWS VPC"
+  value        = aws_vpc.test.cidr_block
+}
+
 output "subnet_id" {
   description  = "ID of AWS subnets"
   value        = aws_subnet.test.id
