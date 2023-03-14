@@ -35,3 +35,8 @@ variable "public_key" {
   type         = string
   sensitive    = true
 }
+
+variable "public_ip" {
+  description  = "Public IP to whitelist"
+  type         = string
+}
