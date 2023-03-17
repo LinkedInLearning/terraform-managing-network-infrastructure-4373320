@@ -11,13 +11,20 @@ resource "aws_route_table" "public" {
   vpc_id = aws_vpc.dev.id
 
   route {
-    cidr_block = "0.0.0.0/0"
-    gateway_id = aws_internet_gateway.public.id
+    cidr_block         = "10.0.0.0/8"
+    transit_gateway_id = aws_ec2_transit_gateway.tgw.id
+  }
+
+  route {
+    cidr_block         = "0.0.0.0/0"
+    gateway_id         = aws_internet_gateway.public.id
   }
 
   tags    = {
     Name  = var.public_rtb
   }
+
+  depends_on = [aws_ec2_transit_gateway.tgw]
 
 }
 

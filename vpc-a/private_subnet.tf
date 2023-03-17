@@ -23,13 +23,20 @@ resource "aws_route_table" "private" {
   vpc_id = aws_vpc.dev.id
 
   route {
-    cidr_block = "0.0.0.0/0"
-    gateway_id = aws_nat_gateway.nat.id
+    cidr_block         = "10.0.0.0/8"
+    transit_gateway_id = aws_ec2_transit_gateway.tgw.id
+  }
+
+  route {
+    cidr_block         = "0.0.0.0/0"
+    gateway_id         = aws_nat_gateway.nat.id
   }
 
   tags    = {
     Name  = var.private_rtb
   }
+
+  depends_on = [aws_ec2_transit_gateway.tgw]
 
 }
 
