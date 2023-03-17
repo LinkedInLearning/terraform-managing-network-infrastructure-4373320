@@ -33,7 +33,7 @@ output "private_ip" {
   value        = aws_instance.dev.*.private_ip
 }
 
-output "peering_connection_id" {
-  description  = "ID of VPC peering connection"
-  value        = aws_vpc_peering_connection.dev_to_test.id
+output "tgw_id" {
+  description  = "ID of AWS Transit Gateway"
+  value        = aws_ec2_transit_gateway.tgw.id
 }

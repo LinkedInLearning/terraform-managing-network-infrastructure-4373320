@@ -27,3 +27,8 @@ output "public_ip" {
   description  = "Public IP of AWS instances"
   value        = aws_instance.test.public_ip
 }
+
+output "tgw_test_attach_id" {
+  description  = "Public IP of AWS instances"
+  value        = aws_ec2_transit_gateway_vpc_attachment.test.id
+}
