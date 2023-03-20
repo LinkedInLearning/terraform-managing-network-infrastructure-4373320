@@ -37,3 +37,8 @@ output "tgw_id" {
   description  = "ID of AWS Transit Gateway"
   value        = aws_ec2_transit_gateway.tgw.id
 }
+
+output "dev_attachment_id" {
+  description  = "ID of dev VPC attachment"
+  value        = aws_ec2_transit_gateway_vpc_attachment.dev.id
+}
