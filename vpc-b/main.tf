@@ -65,6 +65,12 @@ resource "aws_ec2_transit_gateway_vpc_attachment" "test" {
   subnet_ids          = [aws_subnet.test.id]
   transit_gateway_id  = data.terraform_remote_state.vpc_a.outputs.tgw_id 
 
+  # Disable association with default route table
+  transit_gateway_default_route_table_association = false
+
+  # Disable propagation to default route table
+  transit_gateway_default_route_table_propagation = false
+
   tags = {
     Name = format("attachment-%s", local.vpc_name)
   }
