@@ -1,34 +1,31 @@
 # Terraform: Managing Network Infrastructure
-This is the repository for the LinkedIn Learning course `Terraform: Managing Network Infrastructure`. The full course is available from [LinkedIn Learning][lil-course-url].
+This _README.md_ contains notes for video **Using Terraform to expand our infrastructure footprint**.
+
+### Checkout Branch
+```shell
+git checkout 03_01
+```
+
+### Video Links
+- [random_string Resource](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string)
+- [trimsuffix Function](https://developer.hashicorp.com/terraform/language/functions/trimsuffix)
+- [replace Function](https://developer.hashicorp.com/terraform/language/functions/replace)
+- [format Function](https://developer.hashicorp.com/terraform/language/functions/format)
+
+### Provision Infrastructure
+Run Terraform in the **vpc-a** folder first, then run Terraform in the **vpc-b** folder.
+```hcl
+terraform init
+terraform plan -out=tfplan
+terraform apply "tfplan"
+```
+
+### Destroy Infrastructure
+```hcl
+terraform destroy
+```
+
+This is the repository for the LinkedIn Learning course `Terraform: Managing Network Infrastructure`. The full course is available from [LinkedIn Learning][https://github.com/LinkedInLearning/terraform-managing-network-infrastructure-4373320].
+
 
 _See the readme file in the main branch for updated instructions and information._
-## Instructions
-This repository has branches for each of the videos in the course. You can use the branch pop up menu in github to switch to a specific branch and take a look at the course at that stage, or you can add `/tree/BRANCH_NAME` to the URL to go to the branch you want to access.
-
-## Branches
-The branches are structured to correspond to the videos in the course. The naming convention is `CHAPTER#_MOVIE#`. As an example, the branch named `02_03` corresponds to the second chapter and the third video in that chapter. 
-Some branches will have a beginning and an end state. These are marked with the letters `b` for "beginning" and `e` for "end". The `b` branch contains the code as it is at the beginning of the movie. The `e` branch contains the code as it is at the end of the movie. The `main` branch holds the final state of the code when in the course.
-
-When switching from one exercise files branch to the next after making changes to the files, you may get a message like this:
-
-    error: Your local changes to the following files would be overwritten by checkout:        [files]
-    Please commit your changes or stash them before you switch branches.
-    Aborting
-
-To resolve this issue:
-	
-    Add changes to git using this command: git add .
-	Commit changes using this command: git commit -m "some message"
-
-## Installing
-1. To use these exercise files, you must have the following installed:
-	- [list of requirements for course]
-2. Clone this repository into your local machine using the terminal (Mac), CMD (Windows), or a GUI tool like SourceTree.
-3. [Course-specific instructions]
-
-
-[0]: # (Replace these placeholder URLs with actual course URLs)
-
-[lil-course-url]: https://www.linkedin.com/learning/
-[lil-thumbnail-url]: http://
-
