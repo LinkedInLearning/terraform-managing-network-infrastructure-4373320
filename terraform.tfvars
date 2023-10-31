@@ -7,6 +7,7 @@ ngw         = "ngw-dev"
 public_rtb  = "rtb-public"
 private_rtb = "rtb-private"
 public_sg   = "grp-public"
+public_ip   = "76.110.169.141/32"
 
 # instance values
 instance_type = "t2.micro"
